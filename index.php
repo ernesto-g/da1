@@ -76,39 +76,39 @@
 		</div>
 		
 		
-		  <ul class="collection">
-			<li class="collection-item avatar">
-			  <img src="images/yuna.jpg" alt="" class="circle">
-			  <span class="title">Title</span>
-			  <p>First Line <br>
-				 Second Line
-			  </p>
-			  <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-			</li>
-			<li class="collection-item avatar">
-			  <i class="material-icons circle">folder</i>
-			  <span class="title">Title</span>
-			  <p>First Line <br>
-				 Second Line
-			  </p>
-			  <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-			</li>
-			<li class="collection-item avatar">
-			  <i class="material-icons circle green">insert_chart</i>
-			  <span class="title">Title</span>
-			  <p>First Line <br>
-				 Second Line
-			  </p>
-			  <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-			</li>
-			<li class="collection-item avatar">
-			  <i class="material-icons circle red">play_arrow</i>
-			  <span class="title">Title</span>
-			  <p>First Line <br>
-				 Second Line
-			  </p>
-			  <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-			</li>
+		  <ul class="collection" id='devicesList'>
+					<li class="collection-item avatar">
+						<img src="images/yuna.jpg" alt="" class="circle">
+						<span class="title" id='titulo1'>Title</span>
+						<p>First Line <br>
+						Second Line
+						</p>
+						<a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+					</li>
+					<li class="collection-item avatar">
+						<i class="material-icons circle">folder</i>
+						<span class="title">Title</span>
+						<p>First Line <br>
+						Second Line
+						</p>
+						<a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+					</li>
+					<li class="collection-item avatar">
+						<i class="material-icons circle green">insert_chart</i>
+						<span class="title">Title</span>
+						<p>First Line <br>
+						Second Line
+						</p>
+						<a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+					</li>
+					<li class="collection-item avatar">
+						<i class="material-icons circle red">play_arrow</i>
+						<span class="title">Title</span>
+						<p>First Line <br>
+						Second Line
+						</p>
+						<a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+					</li>
 		  </ul>
   
 	
@@ -170,6 +170,9 @@
 	<!--JavaScript at end of body for optimized loading-->
     <script type="text/javascript" src="js/materialize.min.js"></script>
 	  <script type="text/javascript" src="js/main.js"></script>
+		<script type="text/javascript" src="js/MyFramework.js"></script>
+		<script type="text/javascript" src="js/ControllerMainPage.js"></script>
+		<script type="text/javascript" src="js/ViewMainPage.js"></script>
 
     </body>
 	

@@ -1,35 +1,22 @@
 class Main 
 { 
-   atributo1:number;
-
+    myf:MyFramework;
+    myController:ControllerMainPage;
 
     main():void 
     { 
-       
-      console.log("Hello World!!!");
-      var n:number;
-      n=99;
+      this.myf = new MyFramework();
 
-      console.log(n);
+      this.myf.printDebugMsg("main","inicio pagina");
 
-      this.metodo1("mensaje de metodo",27);
-
-      this.atributo1=87;
-
+      this.myController = new ControllerMainPage(this.myf);
+      this.myController.init();
     } 
-
-    metodo1(arg1:string,arg2:number):number
-    {
-         console.log(arg1);
-         console.log(arg2);
-         return 9;
-    }
-
  } 
  
+ window.onload = () => {
+    var obj = new Main(); 
+    obj.main();
+};
  
- 
- var obj = new Main(); 
- obj.main();
 
- obj.atributo1=9;
