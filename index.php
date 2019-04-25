@@ -18,18 +18,15 @@
 
 		<nav class="light-blue darken-4">
 			<div class="nav-wrapper">
-
-			
-			  <a href="#"  class="brand-logo right">Logo</a>
+			  <a href="#"  class="brand-logo right">Smart HOME</a>
 			  <ul id="nav-mobile" class="left hide-on-med-and-down">
 				<li><a href="#" onclick="showSidebar();" ><i class="material-icons">menu</i></a></li>
-				<li><a href="#">Ejemplo 2</a></li>
-				<li class="active" ><a href="#">Ejemplo 3</a></li>
+				<li class="active"><a href="#">Dispositivos</a></li>
+				<li><a href="#">Configuracion</a></li>
 			  </ul>
 			</div>
 		</nav>	
 		
-		<!-- <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>	 -->
 		
 		
 		<ul id="slide-out" class="sidenav">
@@ -51,104 +48,23 @@
 		</ul>
 		
 
-		
-		
-
-		  
-        
-		
-		
 	  <div class="container">
-	  
-		<div class="row">
-		  <div class="col s1">1</div>
-		  <div class="col s1">2</div>
-		  <div class="col s1">3</div>
-		  <div class="col s1">4</div>
-		  <div class="col s1">5</div>
-		  <div class="col s1">6</div>
-		  <div class="col s1">7</div>
-		  <div class="col s1">8</div>
-		  <div class="col s1">9</div>
-		  <div class="col s1">10</div>
-		  <div class="col s1">11</div>
-		  <div class="col s1">12</div>
-		</div>
-		
-		
+ 			<h4 id='title'>Dispositivos</h4>
 		  <ul class="collection" id='devicesList'>
-					<li class="collection-item avatar">
-						<img src="images/yuna.jpg" alt="" class="circle">
-						<span class="title" id='titulo1'>Title</span>
-						<p>First Line <br>
-						Second Line
-						</p>
-						<a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-					</li>
-					<li class="collection-item avatar">
-						<i class="material-icons circle">folder</i>
-						<span class="title">Title</span>
-						<p>First Line <br>
-						Second Line
-						</p>
-						<a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-					</li>
-					<li class="collection-item avatar">
-						<i class="material-icons circle green">insert_chart</i>
-						<span class="title">Title</span>
-						<p>First Line <br>
-						Second Line
-						</p>
-						<a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-					</li>
-					<li class="collection-item avatar">
-						<i class="material-icons circle red">play_arrow</i>
-						<span class="title">Title</span>
-						<p>First Line <br>
-						Second Line
-						</p>
-						<a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-					</li>
 		  </ul>
-  
-	
-		<table class="striped">
-			<thead>
-			  <tr>
-				  <th>Name</th>
-				  <th>Item Name</th>
-				  <th>Item Price</th>
-			  </tr>
-			</thead>
 
-			<tbody>
-			  <tr>
-				<td>Alvin</td>
-				<td>Eclair</td>
-				<td>$0.87</td>
-			  </tr>
-			  <tr>
-				<td>Alan</td>
-				<td>Jellybean</td>
-				<td>$3.76</td>
-			  </tr>
-			  <tr>
-				<td>Jonathan</td>
-				<td>Lollipop</td>
-				<td>$7.00</td>
-			  </tr>
-			</tbody>
-		</table>
-	   </div>		  
+	  </div>	
+
+
 	<footer class="page-footer light-blue darken-4">
           <div class="container">
             <div class="row">
               <div class="col l6 s12">
-                <h5 class="white-text">Footer Content</h5>
-                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+                <h5 class="white-text">FIUBA</h5>
+                <p class="grey-text text-lighten-4">Especializacion IoT - Gestion de Datos y Aplicaciones</p>
               </div>
               <div class="col l4 offset-l2 s12">
-                <h5 class="white-text">Links</h5>
+                <h5 class="white-text">Desarrollo de Aplicaciones I</h5>
                 <ul>
                   <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
                   <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
@@ -160,8 +76,8 @@
           </div>
           <div class="footer-copyright">
             <div class="container">
-            © 2014 Copyright Text
-            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            	2019 
+            <!-- <a class="grey-text text-lighten-4 right" href="#!">More Links</a> -->
             </div>
           </div>
     </footer>

@@ -5,7 +5,7 @@ var ControllerMainPage = /** @class */ (function () {
     }
     ControllerMainPage.prototype.init = function () {
         this.myf.printDebugMsg("controller", "Init en controller");
-        this.myf.addClickListenerToElement("titulo1", this.eventClickOnTitle, this);
+        //this.myf.addClickListenerToElement("titulo1",this.eventClickOnTitle,this);
         this.myf.requestGET("devices.php", this.eventDevicesList, this);
     };
     ControllerMainPage.prototype.eventClickOnTitle = function (controller, e) {
@@ -17,6 +17,7 @@ var ControllerMainPage = /** @class */ (function () {
             var data = JSON.parse(response);
             console.log(typeof data);
             controller.view.showDevices(data);
+            // Agrego listener a cada device
         }
     };
     return ControllerMainPage;

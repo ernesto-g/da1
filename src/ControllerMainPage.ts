@@ -13,7 +13,7 @@ class ControllerMainPage
     {
         this.myf.printDebugMsg("controller","Init en controller");
 
-        this.myf.addClickListenerToElement("titulo1",this.eventClickOnTitle,this);
+        //this.myf.addClickListenerToElement("titulo1",this.eventClickOnTitle,this);
 
         this.myf.requestGET("devices.php",this.eventDevicesList,this);
     }
@@ -33,6 +33,8 @@ class ControllerMainPage
             console.log(typeof data);
 
             controller.view.showDevices(data);
+
+            // Agrego listener a cada device
         }
     }
 
