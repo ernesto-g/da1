@@ -45,9 +45,17 @@ class ControllerMainPage
         let deviceId = el.id.split("_")[1];
         console.log("device id:"+deviceId);
 
-        // Hago request PATCH al server para modificar objeto
-        //controller.myf.requestPATCH();
+        let data = {
+            id:deviceId,
+            value:1
+        };
+        // Hago request POST al server para modificar objeto
+        controller.myf.requestPOST("device.php",data,controller.eventPostResponse,controller);
     }
 
+    private eventPostResponse(controller:ControllerMainPage,status:number,response:string):void
+    {
+        controller.myf.printDebugMsg("controller","Respuesta de Post:"+response); 
+    }
 
 }

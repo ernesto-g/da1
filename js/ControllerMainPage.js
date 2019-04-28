@@ -26,8 +26,15 @@ var ControllerMainPage = /** @class */ (function () {
         console.log("vino elemento:" + el.id);
         var deviceId = el.id.split("_")[1];
         console.log("device id:" + deviceId);
-        // Hago request PATCH al server para modificar objeto
-        //controller.myf.requestPATCH();
+        var data = {
+            id: deviceId,
+            value: 1
+        };
+        // Hago request POST al server para modificar objeto
+        controller.myf.requestPOST("device.php", data, controller.eventPostResponse, controller);
+    };
+    ControllerMainPage.prototype.eventPostResponse = function (controller, status, response) {
+        controller.myf.printDebugMsg("controller", "Respuesta de Post:" + response);
     };
     return ControllerMainPage;
 }());

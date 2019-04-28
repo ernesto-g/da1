@@ -68,5 +68,13 @@ var MyFramework = /** @class */ (function () {
         xhr.open('GET', url, true);
         xhr.send(null);
     };
+    MyFramework.prototype.requestPOST = function (url, data, callback, contextObj) {
+        var formData = new FormData();
+        formData.append("username", "Groucho");
+        //formData.append("accountnum", 123456);
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "device.php");
+        xhr.send(formData);
+    };
     return MyFramework;
 }());

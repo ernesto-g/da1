@@ -81,4 +81,16 @@ class MyFramework{
         xhr.send(null);
     }
 
+    requestPOST(url:string,data:object,callback:(context:any,status:number,response:string)=>void,contextObj:any):void
+    {
+        let formData = new FormData();
+
+        formData.append("username", "Groucho");
+        //formData.append("accountnum", 123456);
+
+        let xhr = new XMLHttpRequest();
+        xhr.open("POST", "device.php");
+        xhr.send(formData);
+    }
+
 }
