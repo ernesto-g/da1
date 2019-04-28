@@ -14,8 +14,8 @@ class Main
     } 
  } 
  
- window.onload = () => {
-    var obj = new Main(); 
+window.onload = () => {
+    let obj = new Main(); 
     obj.main();
 };
  

@@ -1,0 +1,31 @@
+Instalacion APTITUDE
+sudo apt-get install aptitude
+
+Instalacion NODEJS
+sudo aptitude install curl
+sudo curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+sudo aptitude install nodejs
+node -v
+npm -v
+
+
+Instalacion TYPESCRIPT
+sudo npm install -g typescript
+
+
+Instalacion VISUAL STUDIO CODE
+Bajar .deb de https://code.visualstudio.com
+sudo dpkg -i code_1.33.1-1554971066_amd64.deb
+
+Instalacion GIT
+sudo aptitude install git
+
+Instalacion SERVER HTTP
+sudo npm install http-server -g
+
+Ejercutar server http:
+http-server path -c-1
+
+
+
+

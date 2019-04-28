@@ -2,42 +2,52 @@ class ControllerMainPage
 {
     myf:MyFramework;
     view:ViewMainPage;
+    dataModel:object;
 
     constructor(myf:MyFramework)
     {
         this.myf=myf;
         this.view =  new ViewMainPage(this.myf);
+        this.dataModel = null;
     }
 
     init():void
     {
         this.myf.printDebugMsg("controller","Init en controller");
-
-        //this.myf.addClickListenerToElement("titulo1",this.eventClickOnTitle,this);
-
+        
+        // Hago request
         this.myf.requestGET("devices.php",this.eventDevicesList,this);
-    }
-
-    private eventClickOnTitle(controller:ControllerMainPage,e:Event):void
-    {       
-        controller.myf.printDebugMsg("controller","Click en titulo!!!");
     }
 
     private eventDevicesList(controller:ControllerMainPage,status:number,response:string)
     {
-        controller.myf.printDebugMsg("controller","--Llego de server status:"+status+" response:"+response); 
+        controller.myf.printDebugMsg("controller","--Llego de server status:"+status); 
         
         if(response!=null)
         {
-            var data = JSON.parse(response);
-            console.log(typeof data);
+            let data = JSON.parse(response);
+            controller.dataModel = data; // me guardo el modelo
 
             controller.view.showDevices(data);
 
             // Agrego listener a cada device
+            for(let i in data)
+            {
+                controller.myf.addClickListenerToElement("dev_"+data[i].id,controller.eventClickOnDevice,controller);
+            }
         }
     }
 
+    private eventClickOnDevice(controller:ControllerMainPage,e:Event,el:HTMLElement)
+    {
+        controller.myf.printDebugMsg("controller","--Click en device"); 
+        console.log("vino elemento:"+el.id);
+        let deviceId = el.id.split("_")[1];
+        console.log("device id:"+deviceId);
+
+        // Hago request PATCH al server para modificar objeto
+        //controller.myf.requestPATCH();
+    }
 
 
 }

@@ -1,19 +1,57 @@
+/**
+ * Mini framework escrito en Typescript para manipulacion del DOM
+ * y ejecucion de requests HTTP.
+ */
 var MyFramework = /** @class */ (function () {
     function MyFramework() {
     }
+    /**
+     * getElementById: Busca un elemento del DOM por su ID
+     * @param id : String con el id a buscar
+     * @returns : Objeto HTMLElement encontrado
+     */
     MyFramework.prototype.getElementById = function (id) {
         var el;
         el = document.getElementById(id);
         return el;
     };
+    /**
+     * addClickListenerToElement: Configura un listener para un elemento del DOM
+     * @param id : String con el id del elemento en el DOM
+     * @param callback: funcion que se ejecutara al hacer click sobre el elemento
+     *         Esta funcion debe tener el prototipo:
+     *              callback:(context:any,e:Event,el:HTMLElement):void
+     *         en donde el primer parametro es el objeto "contextObj" del metodo
+     *         el segundo parametro es el objeto Event que describe el evento
+     *         el tercer parametro es el objeto HTMLElement sobre el que se produjo el evento.
+     * @param contextObj : Objeto de cualquier tipo que se pasara a la funcion callback al producirse el evento
+     * @returns : void
+     */
     MyFramework.prototype.addClickListenerToElement = function (id, callback, contextObj) {
         var el;
         el = document.getElementById(id);
-        el.addEventListener("click", function (e) { return callback(contextObj, e); });
+        el.addEventListener("click", function (e) { return callback(contextObj, e, el); });
     };
+    /**
+     * printDebugMsg: Imprime un mensaje por la consola de log. El msg esta compuesto por un tag y un mensaje
+     * @param tag : String que se imprimirra antes del mensaje
+     * @param msg : String con mensaje
+     * @returns : void
+     */
     MyFramework.prototype.printDebugMsg = function (tag, msg) {
         console.log(">DEBUG.<" + tag + "> " + msg);
     };
+    /**
+     * requestGET: Realiza un request HTTP del tipo GET en forma asincronica
+     * @param url : String con la URl del request
+     * @param callback : funcion que se ejecutara al recibir una respuesta.
+     *          Esta funcion debe tener el prototipo:
+     *              callback:(context:any,status:number,response:string):void
+     *          en donde el primer parametro es el objeto "contextObj" del metodo
+     *          el segundo parametro es el status number que devolvio al server (200,404,etc.)
+     *          el tercero es un string con la respuesta del server.
+     * @param contextObj : Objeto de cualquier tipo que se pasara a la funcion callback al recibir la respuesta
+     */
     MyFramework.prototype.requestGET = function (url, callback, contextObj) {
         var xhr;
         xhr = new XMLHttpRequest();
