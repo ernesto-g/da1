@@ -22,19 +22,19 @@ var ControllerMainPage = /** @class */ (function () {
         }
     };
     ControllerMainPage.prototype.eventClickOnDevice = function (controller, e, el) {
-        controller.myf.printDebugMsg("controller", "--Click en device");
-        console.log("vino elemento:" + el.id);
-        var deviceId = el.id.split("_")[1];
-        console.log("device id:" + deviceId);
-        var data = {
-            id: deviceId,
-            value: 1
-        };
+        var data = controller.view.getSwitchDataFromElement(el);
         // Hago request POST al server para modificar objeto
         controller.myf.requestPOST("device.php", data, controller.eventPostResponse, controller);
     };
     ControllerMainPage.prototype.eventPostResponse = function (controller, status, response) {
         controller.myf.printDebugMsg("controller", "Respuesta de Post:" + response);
+        var data = JSON.parse(response);
+        if (data["response"]) {
+            controller.myf.printDebugMsg("controller", "ok");
+        }
+        else {
+            controller.myf.printDebugMsg("controller", "error");
+        }
     };
     return ControllerMainPage;
 }());

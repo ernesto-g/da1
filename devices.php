@@ -33,12 +33,12 @@
     "desc":"Frente a la cama",
     "state":0,
     "type":1
-  }  ,
+  },
   {
     "id":6,
-    "name":"Temperatura living",
-    "desc":"48ºC",
+    "name":"Lampara 5",
+    "desc":"Luz baño",
     "state":0,
-    "type":2
-  }  
+    "type":0
+  }       
 ]

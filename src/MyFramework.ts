@@ -45,6 +45,17 @@ class MyFramework{
     {
         console.log(">DEBUG.<"+tag+"> "+msg);
     }
+    /**
+     * printDebugObj: Imprime un OBJ por la consola de log. El msg esta compuesto por un tag y un mensaje 
+     * @param tag : String que se imprimirra antes del objeto
+     * @param msg : Objeto a imprimir
+     * @returns : void
+     */
+    printDebugObj(tag:string,msg:object):void
+    {
+        console.log(">DEBUG.<"+tag+"> Object:");
+        console.log(msg);
+    }    
 
     /**
      * requestGET: Realiza un request HTTP del tipo GET en forma asincronica
@@ -85,10 +96,27 @@ class MyFramework{
     {
         let formData = new FormData();
 
-        formData.append("username", "Groucho");
-        //formData.append("accountnum", 123456);
+        for(let key in data) {
+            formData.append(key, data[key]);
+        }
 
         let xhr = new XMLHttpRequest();
+
+        xhr.onreadystatechange = function()
+        {
+            if(xhr.readyState == 4)
+            {
+                if(xhr.status == 200)
+                {
+                    callback(contextObj,xhr.status,xhr.responseText);
+                }
+                else
+                {
+                    callback(contextObj,xhr.status,null);
+                }
+            }
+        };
+
         xhr.open("POST", "device.php");
         xhr.send(formData);
     }

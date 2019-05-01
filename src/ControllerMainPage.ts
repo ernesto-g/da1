@@ -40,15 +40,8 @@ class ControllerMainPage
 
     private eventClickOnDevice(controller:ControllerMainPage,e:Event,el:HTMLElement)
     {
-        controller.myf.printDebugMsg("controller","--Click en device"); 
-        console.log("vino elemento:"+el.id);
-        let deviceId = el.id.split("_")[1];
-        console.log("device id:"+deviceId);
+       let data:object = controller.view.getSwitchDataFromElement(el);
 
-        let data = {
-            id:deviceId,
-            value:1
-        };
         // Hago request POST al server para modificar objeto
         controller.myf.requestPOST("device.php",data,controller.eventPostResponse,controller);
     }
@@ -56,6 +49,16 @@ class ControllerMainPage
     private eventPostResponse(controller:ControllerMainPage,status:number,response:string):void
     {
         controller.myf.printDebugMsg("controller","Respuesta de Post:"+response); 
+
+        let data = JSON.parse(response);
+        if(data["response"])
+        {
+            controller.myf.printDebugMsg("controller","ok");            
+        }
+        else
+        {
+            controller.myf.printDebugMsg("controller","error");
+        }
     }
 
 }

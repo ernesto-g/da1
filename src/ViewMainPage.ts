@@ -9,14 +9,18 @@ class ViewMainPage
 
     showDevices(list:any):void
     {
-        console.log(list);
+        this.myf.printDebugObj("View",list);
 
         // cargo la lista de objetos en el DOM
-        var devicesUl:HTMLElement = this.myf.getElementById("devicesList");
+        let devicesUl:HTMLElement = this.myf.getElementById("devicesList");
 
-        var items:string="";
-        for(var i in list)
+        let items:string="";
+        for(let i in list)
         {   
+            let checkedStr="";
+            if(list[i].state)
+                checkedStr="checked";
+
             switch(list[i].type)
             {
                 case 0: // Lampara                     
@@ -28,7 +32,7 @@ class ViewMainPage
                                 <a href='#!' class='secondary-content'> <div class='switch'> \
                                                                             <label> \
                                                                             Off \
-                                                                            <input type='checkbox' id='dev_"+list[i].id+"'> \
+                                                                            <input type='checkbox' id='dev_"+list[i].id+"' "+checkedStr+"> \
                                                                             <span class='lever'></span> \
                                                                             On \
                                                                             </label> \
@@ -44,35 +48,35 @@ class ViewMainPage
                                 <a href='#!' class='secondary-content'> <div class='switch'> \
                                                                             <label> \
                                                                             Off \
-                                                                            <input type='checkbox' id='dev_"+list[i].id+"'> \
+                                                                            <input type='checkbox' id='dev_"+list[i].id+"' "+checkedStr+"> \
                                                                             <span class='lever'></span> \
                                                                             On \
                                                                             </label> \
                                                                         </div></a> \
                             </li>";  
-                    break;   
-                case 2: // Termostato                    
-                    items+="<li class='collection-item avatar'> \
-                                <img src='images/temperature.png' alt='' class='circle'> \
-                                <span class='title'>"+list[i].name+"</span> \
-                                <p>"+list[i].desc+"<br> \
-                                </p> \
-                                <a href='#!' class='secondary-content'> <div class='switch'> \
-                                                                            <label> \
-                                                                            Off \
-                                                                            <input type='checkbox' id='dev_"+list[i].id+"'> \
-                                                                            <span class='lever'></span> \
-                                                                            On \
-                                                                            </label> \
-                                                                        </div></a> \
-                            </li>";  
-                    break;                                                 
+                    break;                                                    
             }
         }
 
         devicesUl.innerHTML=items;
     }
 
+    getSwitchDataFromElement(el:HTMLElement):object
+    {
+        let elInput = <HTMLInputElement> el;        
+        let deviceId = elInput.id.split("_")[1];
+        let onOff = elInput.checked;
+        return {"id":deviceId,"checked":onOff};
+    }
 
+    setSwitchStateById(id:number,state:boolean):void
+    {
+        let el:HTMLInputElement = <HTMLInputElement>this.myf.getElementById("dev_"+id);
+        if(el!=null)
+        {
+            this.myf.printDebugMsg("View","seteo switch:"+id+" en:"+state);
+            el.checked = state;
+        }
+    }
 
 }
