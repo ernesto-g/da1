@@ -42,6 +42,16 @@ var MyFramework = /** @class */ (function () {
         console.log(">DEBUG.<" + tag + "> " + msg);
     };
     /**
+     * printDebugObj: Imprime un OBJ por la consola de log. El msg esta compuesto por un tag y un mensaje
+     * @param tag : String que se imprimirra antes del objeto
+     * @param msg : Objeto a imprimir
+     * @returns : void
+     */
+    MyFramework.prototype.printDebugObj = function (tag, msg) {
+        console.log(">DEBUG.<" + tag + "> Object:");
+        console.log(msg);
+    };
+    /**
      * requestGET: Realiza un request HTTP del tipo GET en forma asincronica
      * @param url : String con la URl del request
      * @param callback : funcion que se ejecutara al recibir una respuesta.
@@ -70,9 +80,20 @@ var MyFramework = /** @class */ (function () {
     };
     MyFramework.prototype.requestPOST = function (url, data, callback, contextObj) {
         var formData = new FormData();
-        formData.append("username", "Groucho");
-        //formData.append("accountnum", 123456);
+        for (var key in data) {
+            formData.append(key, data[key]);
+        }
         var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4) {
+                if (xhr.status == 200) {
+                    callback(contextObj, xhr.status, xhr.responseText);
+                }
+                else {
+                    callback(contextObj, xhr.status, null);
+                }
+            }
+        };
         xhr.open("POST", "device.php");
         xhr.send(formData);
     };

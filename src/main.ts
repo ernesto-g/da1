@@ -12,7 +12,7 @@ class Main
       this.myController = new ControllerMainPage(this.myf);
       this.myController.init();
     } 
- } 
+} 
  
 window.onload = () => {
     let obj = new Main(); 
