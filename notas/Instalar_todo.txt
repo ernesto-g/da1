@@ -38,4 +38,28 @@ Ejecutar server PHP local:
 php -S localhost:8000
 
 
+Instalar MySQL y phpMySQL
+
+sudo aptitude install mysql-server
+sudo aptitude install mysql-client
+sudo aptitude install php-mysql
+
+
+Instalar PHPMyAdmin
+
+Bajar zip de de https://www.phpmyadmin.net/downloads/
+descomprimir en algun directorio
+
+ejecutar un servidor web dentro de la carpeta de phpmyadmin para poder acceder desde el browser
+php -S localhost:8080
+luego acceder con localhost:8080
+Loguearse con root y el pass ingresado al instalar mysql
+
+
+
+
+
+
+
+
 
