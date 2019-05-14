@@ -117,7 +117,7 @@ class MyFramework{
             }
         };
 
-        xhr.open("POST", "device.php");
+        xhr.open("POST", url);
         xhr.send(formData);
     }
 

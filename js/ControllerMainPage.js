@@ -7,7 +7,7 @@ var ControllerMainPage = /** @class */ (function () {
     ControllerMainPage.prototype.init = function () {
         this.myf.printDebugMsg("controller", "Init en controller");
         // Hago request
-        this.myf.requestGET("devices.php", this.eventDevicesList, this);
+        this.myf.requestGET("backend/ws/devices", this.eventDevicesList, this);
     };
     ControllerMainPage.prototype.eventDevicesList = function (controller, status, response) {
         controller.myf.printDebugMsg("controller", "--Llego de server status:" + status);
@@ -23,8 +23,10 @@ var ControllerMainPage = /** @class */ (function () {
     };
     ControllerMainPage.prototype.eventClickOnDevice = function (controller, e, el) {
         var data = controller.view.getSwitchDataFromElement(el);
+        console.log("hago request");
+        console.log(data);
         // Hago request POST al server para modificar objeto
-        controller.myf.requestPOST("device.php", data, controller.eventPostResponse, controller);
+        controller.myf.requestPOST("backend/ws/devices/" + data["id"], data, controller.eventPostResponse, controller);
     };
     ControllerMainPage.prototype.eventPostResponse = function (controller, status, response) {
         controller.myf.printDebugMsg("controller", "Respuesta de Post:" + response);

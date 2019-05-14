@@ -23,11 +23,11 @@ class ViewMainPage
 
             switch(list[i].type)
             {
-                case 0: // Lampara                     
+                case "0": // Lampara                     
                     items+="<li class='collection-item avatar'> \
                                 <img src='images/lightbulb.png' alt='' class='circle'> \
                                 <span class='title'>"+list[i].name+"</span> \
-                                <p>"+list[i].desc+"<br> \
+                                <p>"+list[i].description+"<br> \
                                 </p> \
                                 <a href='#!' class='secondary-content'> <div class='switch'> \
                                                                             <label> \
@@ -39,11 +39,11 @@ class ViewMainPage
                                                                         </div></a> \
                             </li>";  
                     break;  
-                case 1: // Persiana                    
+                case "1": // Persiana                    
                     items+="<li class='collection-item avatar'> \
                                 <img src='images/window.png' alt='' class='circle'> \
                                 <span class='title'>"+list[i].name+"</span> \
-                                <p>"+list[i].desc+"<br> \
+                                <p>"+list[i].description+"<br> \
                                 </p> \
                                 <a href='#!' class='secondary-content'> <div class='switch'> \
                                                                             <label> \

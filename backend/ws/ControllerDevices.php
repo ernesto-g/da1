@@ -20,7 +20,8 @@ class ControllerDevices extends ControllerManager
 
 	public function post($f3)
 	{
-		echo("Vino un POST");
+		$out = ["response"=>true,"idDevice"=>$_POST["id"],"state"=>$_POST["checked"]];
+		echo(json_encode($out));
 	}
 
 }
