@@ -7,7 +7,7 @@ var ControllerMainPage = /** @class */ (function () {
     ControllerMainPage.prototype.init = function () {
         this.myf.printDebugMsg("controller", "Init en controller");
         // Hago request
-        this.myf.requestGET("backend/ws/devices", this.eventDevicesList, this);
+        this.myf.requestGET("devices.php", this.eventDevicesList, this);
     };
     ControllerMainPage.prototype.eventDevicesList = function (controller, status, response) {
         controller.myf.printDebugMsg("controller", "--Llego de server status:" + status);
