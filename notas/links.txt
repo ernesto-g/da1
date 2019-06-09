@@ -1,0 +1,15 @@
+Closures:
+https://developer.mozilla.org/es/docs/Web/JavaScript/Closures
+
+Fat Arrow:
+https://jack.ofspades.com/es6-iife-with-fat-arrow-functions/
+
+TS Arrays:
+https://www.tutorialsteacher.com/typescript/typescript-array
+
+Materializecss:
+https://materializecss.com/grid.html
+
+XmlHttpRequest:
+https://developer.mozilla.org/es/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest
+
