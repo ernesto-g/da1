@@ -55,26 +55,27 @@ let inc:Function = function(x:number){return x+1};
 let r:number = inc(6);
 console.log(r);
 */
-/*
-class MyClass{
-    counter:number=0;
-    constructor(c:number){
+class MyClass {
+    constructor(c) {
+        this.counter = 0;
         this.counter = c;
     }
+    /*
     incFactory():Function{
         return function(){return this.counter+1;};
-    }
-    
-    incFactory():Function{
-        return () => {return this.counter+1;};
+    }*/
+    incFactory() {
+        return () => {
+            this.counter++;
+            return this.counter;
+        };
     }
 }
-
-let m:MyClass = new MyClass(6);
-let f:Function = m.incFactory();
-
+let m = new MyClass(6);
+let f = m.incFactory();
+let f2 = m.incFactory();
 console.log(f());
-*/
+console.log(f2());
 /*
 //opcion 1
 let b:HTMLElement = document.getElementById("boton");
@@ -93,22 +94,25 @@ function evento():void{
 
 configClick("boton",evento);
 */
+/*
 //opcion 3
-function configClick(id, callback) {
-    let b = document.getElementById(id);
-    b.addEventListener("click", () => { callback(); });
+function configClick(id:string,callback:any):void {
+    let b:HTMLElement = document.getElementById(id);
+    b.addEventListener("click",()=>{callback();});
 }
-class MyClass {
-    constructor() {
-        this.msg = "click!";
-    }
-    evento() {
+
+class MyClass{
+    msg:string="click!";
+
+    evento():void{
         alert(this.msg);
     }
 }
-let o = new MyClass();
-configClick("boton", o.evento);
+
+let o:MyClass = new MyClass();
+configClick("boton",o.evento);
 //configClick("boton",()=>(o.evento())); // solucion
+*/
 /*
 //opcion 4
 interface BtnListener{

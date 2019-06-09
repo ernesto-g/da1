@@ -61,26 +61,32 @@ let r:number = inc(6);
 console.log(r);
 */
 
-/*
+
 class MyClass{
     counter:number=0;
     constructor(c:number){
         this.counter = c;
     }
+    /*
     incFactory():Function{
         return function(){return this.counter+1;};
-    }
+    }*/
     
     incFactory():Function{
-        return () => {return this.counter+1;};
+        return () => {
+            this.counter++;
+            return this.counter;
+        };
     }
 }
 
 let m:MyClass = new MyClass(6);
 let f:Function = m.incFactory();
+let f2:Function = m.incFactory();
 
 console.log(f());
-*/
+console.log(f2());
+
 
 /*
 //opcion 1
@@ -102,7 +108,7 @@ function evento():void{
 configClick("boton",evento);
 */
 
-
+/*
 //opcion 3
 function configClick(id:string,callback:any):void {
     let b:HTMLElement = document.getElementById(id);
@@ -120,7 +126,7 @@ class MyClass{
 let o:MyClass = new MyClass();
 configClick("boton",o.evento);
 //configClick("boton",()=>(o.evento())); // solucion
-
+*/
 
 /*
 //opcion 4
