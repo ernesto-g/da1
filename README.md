@@ -1,9 +1,9 @@
-# Desarrollo de aplicaciones I. Carrera de Especialización IoT. FIUBA
+# Desarrollo de aplicaciones I. Cursos IoT. FIUBA
 
 Ejercicios y material para la materia Desarrollo de Aplicaciones I. FIUBA.
 
 # Clase 01
-    Arquitectura cliente-servidor   
+    Arquitectura cliente-servidor
     Tecnologías del lado del cliente
     Tecnologías del lado del server
     Tipos de aplicaciones web
