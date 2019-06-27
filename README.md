@@ -8,6 +8,8 @@ Ejercicios y material para la materia Desarrollo de Aplicaciones I. FIUBA.
     Tecnologías del lado del server
     Tipos de aplicaciones web
     Maquetado con Materializecss
+    Link a video de clase 1: https://drive.google.com/open?id=12fkPZeHAjyqPqLeRcyeaMZfakT_ov0cu
+
 
 # Clase 02
     Introducción a Docker
