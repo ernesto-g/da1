@@ -14,6 +14,7 @@ Ejercicios y material para la materia Desarrollo de Aplicaciones I. FIUBA.
 # Clase 02
     Introducción a Docker
     Instalación de herramientas
+    Link a video de clase 2: https://drive.google.com/file/d/1_g33P0soLUfXukQKvYc27yfgUbKApkYc/view?usp=sharing
 
 # Clase 03
     Introducción a Typescript
