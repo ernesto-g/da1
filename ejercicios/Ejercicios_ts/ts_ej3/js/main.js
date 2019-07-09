@@ -50,3 +50,23 @@ var User = /** @class */ (function () {
     };
     return User;
 }());
+var Main = /** @class */ (function () {
+    function Main() {
+    }
+    Main.prototype.main = function () {
+        console.log("Hola mundo");
+        var usuarios;
+        usuarios = new Array();
+        usuarios.push(new User(1, "juan@juan.com", "Juan"));
+        usuarios.push(new User(2, "pepe@juan.com", "Pepe"));
+        usuarios.push(new User(3, "carlos@juan.com", "Carlos"));
+        for (var i in usuarios) {
+            usuarios[i].printInfo();
+        }
+    };
+    return Main;
+}());
+window.onload = function () {
+    var m = new Main();
+    m.main();
+};

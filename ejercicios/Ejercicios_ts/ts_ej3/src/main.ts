@@ -42,3 +42,26 @@ class User {
     }
 
 }
+
+class Main {
+
+    main():void{
+        console.log("Hola mundo");
+        let usuarios:Array<User>;
+        usuarios = new Array<User>();
+        usuarios.push(new User(1,"juan@juan.com","Juan"));
+        usuarios.push(new User(2,"pepe@juan.com","Pepe"));
+        usuarios.push(new User(3,"carlos@juan.com","Carlos"));
+
+        for(let i in usuarios){
+            usuarios[i].printInfo();
+        }
+    }
+}
+
+window.onload = () => {
+    let m:Main = new Main();
+    m.main();
+};
+ 
+
