@@ -23,6 +23,7 @@ Ejercicios y material para la materia Desarrollo de Aplicaciones I. FIUBA.
     var vs. let
     Herencia
     Getters y Setters
+    Link a video de clae 3: https://drive.google.com/file/d/1o6E4xMoR-CW290ihNr47GldtAr2Bjz-i/view?usp=sharing
 
 # Clase 04
     Typescript avanzado
