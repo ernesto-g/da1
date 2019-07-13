@@ -21,14 +21,20 @@ class Main
     } 
 
     mostrarUsers(users:Array<User>):void {
+        /*
         let items:string="";
-
         for(let i in users){
           users[i].printInfo();
           items+="<li>"+users[i].name+" "+users[i].email+"</li>";
         }
+        */
+        
+        let strTemplate:string=`${
+            users.map((item) =>`<li>${item.name} ${item.email}</li>`).join('')
+          }`;
+
         let ul:HTMLElement = this.myf.getElementById("listaUsuarios");
-        ul.innerHTML = items;
+        ul.innerHTML = strTemplate;
     }
 } 
  

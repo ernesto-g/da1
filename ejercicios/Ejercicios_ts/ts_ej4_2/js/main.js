@@ -13,13 +13,16 @@ var Main = /** @class */ (function () {
         this.mostrarUsers(users);
     };
     Main.prototype.mostrarUsers = function (users) {
-        var items = "";
-        for (var i in users) {
-            users[i].printInfo();
-            items += "<li>" + users[i].name + " " + users[i].email + "</li>";
+        /*
+        let items:string="";
+        for(let i in users){
+          users[i].printInfo();
+          items+="<li>"+users[i].name+" "+users[i].email+"</li>";
         }
+        */
+        var strTemplate = "" + users.map(function (item) { return "<li>" + item.name + " " + item.email + "</li>"; }).join('');
         var ul = this.myf.getElementById("listaUsuarios");
-        ul.innerHTML = items;
+        ul.innerHTML = strTemplate;
     };
     return Main;
 }());
