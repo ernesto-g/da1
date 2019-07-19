@@ -23,7 +23,7 @@ Ejercicios y material para la materia Desarrollo de Aplicaciones I. FIUBA.
     var vs. let
     Herencia
     Getters y Setters
-    Link a video de clae 3: https://drive.google.com/file/d/1o6E4xMoR-CW290ihNr47GldtAr2Bjz-i/view?usp=sharing
+    Link a video de clase 3: https://drive.google.com/file/d/1o6E4xMoR-CW290ihNr47GldtAr2Bjz-i/view?usp=sharing
 
 # Clase 04
     Typescript avanzado
@@ -32,6 +32,7 @@ Ejercicios y material para la materia Desarrollo de Aplicaciones I. FIUBA.
     Creación de un Framework propio
     Requests GET y POST
     JSON
+    Link a video clase 4: https://drive.google.com/open?id=1ZDyMo8SGJkJrjhqsnnuiXat4lbi-x_Cu
  
 # Clase 05
     Introducción a PHP
