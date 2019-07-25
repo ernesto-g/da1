@@ -26,4 +26,17 @@ Para detenerlo, ejecutar:
 $ docker stop http-server
 ```
 
+# Servidor de PHP
+
+Copiar "serve_php_app.sh" a la carpeta con el sitio web (donde está index.php), acceder a dicho directorio y ejecutar:
+
+```sh
+$ ./serve_php_app.sh . 8000
+```
+
+Siendo "." el directorio actual y 8000 el puerto. Para comprobar el funcionamiento acceder desde un navegador a localhost:8000/index.php
+Para detenerlo, ejecutar:
+```sh
+$ docker stop php-server
+```
 
