@@ -40,3 +40,28 @@ Para detenerlo, ejecutar:
 $ docker stop php-server
 ```
 
+# Motor de base de datos
+
+Copiar "start_mysql.sh" a una carpeta llamada "docker_mysql". Acceder a dicho directorio y crear la carpeta "database". 
+Luego ejecutar:
+
+```sh
+$ ./start_mysql.sh mysql-net ./database
+```
+
+Para detener el contenedor ejecutar docker stop mysql-server
+
+
+# PHP MyAdmin
+
+Copiar el script "run_phpadmin.sh" a la carpeta "docker_mysql" creada previamente. Luego ejecutar:
+
+
+```sh
+$ ./run_phpadmin.sh mysql-net mysql-server 8085
+```
+
+Luego abrir un browser en la url: http://localhost:8085 y deberá abrirse phpmyadmin, entrar con usuario "root" y password "userpass".
+
+Para detener el contenedor ejecutar docker stop phpadmin
+
