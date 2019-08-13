@@ -41,17 +41,17 @@ Ejercicios y material para la materia Desarrollo de Aplicaciones I. FIUBA.
     Herencia
     Inclusión de archivos
     Exceptions
-    Introducción a FatFreeFramework
 
 # Clase 06
-    Lenguaje SQL
-    PHPMyAdmin
-    Utiliación de MySQL con FatFreeFramework
+    Introducción a FatFreeFramework
     
 # Clase 07
     Docker: Temas avanzados
     Dockerhub
+    Lenguaje SQL
+    PHPMyAdmin
     
 # Clase 08
+    Utiliación de MySQL con FatFreeFramework
     Realización y entrega de TP final
 
