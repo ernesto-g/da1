@@ -91,6 +91,9 @@ Luego ejecutar
 $ docker-compose up
 ```
 
+Se levanta el servidor PHP, para nuestra aplicación en el puerto 8081 y PhpMyAdmin en el puerto 8082. 
+El usuario para entrar a la base MySQL es root y la contraseña userpass.
+
 Presionar ctrl+c para finalizar los procesos.
 
 
