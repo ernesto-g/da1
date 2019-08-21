@@ -65,3 +65,33 @@ Luego abrir un browser en la url: http://localhost:8085 y deberá abrirse phpmya
 
 Para detener el contenedor ejecutar docker stop phpadmin
 
+
+# Servidor de PHP con MySQL
+
+Ejecutar previamente el script que levanta el motor de la base de datos.Luego copiar "serve_php_app_net.sh" a la carpeta con el sitio web (donde está index.php), acceder a dicho directorio y ejecutar:
+
+```sh
+$ ./serve_php_app_net.sh . 8000
+```
+
+Siendo "." el directorio actual y 8000 el puerto. Para comprobar el funcionamiento acceder desde un navegador a localhost:8000/index.php
+Para detenerlo, ejecutar:
+```sh
+$ docker stop php-server
+```
+
+# Correr todo con Docker compose
+
+Se requiere tener instalado Docker compose. Copiar el archivo "docker-compose.yml" en la raiz del sitio web. 
+Crear la carpeta "database" en la raiz del sitio web.
+
+Luego ejecutar
+
+```sh
+$ docker-compose up
+```
+
+Presionar ctrl+c para finalizar los procesos.
+
+
+
